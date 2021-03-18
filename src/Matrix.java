@@ -43,8 +43,35 @@ public class Matrix<T> {
         }
     }
 
-    public void getDiagonals(ArrayList<ArrayList<T>> lists) {
+    public void getDiagonals(ArrayList<ArrayList<T>> lists) throws Exception {
+        if (lists.size() != 0) {
+            throw new Exception("List must be empty");
+        }
 
+        for (int i = 0; i < 6; i++) {
+            lists.add(new ArrayList<>());
+        }
+
+        for (int i = 0; i < 6; i++) {
+            lists.get(0).add(getValue(i, i));
+            lists.get(1).add(getValue(5 - i, i));
+        }
+
+        for (int i = 1; i < 6; i++) {
+            int j = i - 1;
+            lists.get(2).add(getValue(i, j));
+            lists.get(3).add(getValue(j, i));
+        }
+
+        for (int i = 0; i < 5; i++) {
+            int j = 4 - i;
+            lists.get(4).add(getValue(i, j));
+        }
+
+        for (int i = 1; i < 6; i++) {
+            int j = 6 - i;
+            lists.get(5).add(getValue(i, j));
+        }
     }
 
     public int getSize() {

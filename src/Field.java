@@ -89,7 +89,7 @@ public class Field {
         return mergeChildFields();
     }
 
-    public ChildField getChildFieldByIndex(int x, int y) {
+    private ChildField getChildFieldByIndex(int x, int y) {
         int childFieldXIndex = (x > 2) ? 1 : 0;
         int childFieldYIndex = (y > 2) ? 1 : 0;
 
@@ -101,7 +101,7 @@ public class Field {
 
         for (int x = 0; x < 6; x++) {
             for (int y = 0; y < 6; y++) {
-                ChildField childField = getChildFieldByIndex(x, y);
+                ChildField childField = getChildFieldByIndex(y, x);
                 Matrix<Cell> childFieldCells = childField.getCells();
                 cells.setValue(x, y, childFieldCells.getValue(x % 3, y % 3));
             }

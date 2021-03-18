@@ -14,7 +14,7 @@ public class ChildField {
             throw new Exception("Invalid index");
         }
 
-        Cell cell = cells.getValue(x, y);
+        Cell cell = cells.getValue(y, x);
 
         if (cell.getState() == CellState.Empty) {
             cell.putBall(ball);
@@ -28,7 +28,7 @@ public class ChildField {
             throw new Exception("Invalid index");
         }
 
-        Cell cell = cells.getValue(x, y);
+        Cell cell = cells.getValue(y, x);
 
         return cell.getState() == CellState.Empty;
     }
@@ -57,17 +57,17 @@ public class ChildField {
                 new Cell[] { new Cell(), new Cell(), new Cell() }
         });
 
-        afterRotate.setValue(2,0, cells.getValue(0, 0));
-        afterRotate.setValue(2,1, cells.getValue(1, 0));
-        afterRotate.setValue(2,2, cells.getValue(2, 0));
+        afterRotate.setValue(0,2, cells.getValue(0, 0));
+        afterRotate.setValue(0,1, cells.getValue(1, 0));
+        afterRotate.setValue(0,0, cells.getValue(2, 0));
 
-        afterRotate.setValue(1,0, cells.getValue(0, 1));
-        afterRotate.setValue(1,1, cells.getValue(1, 1 ));
-        afterRotate.setValue(1,2, cells.getValue(2, 1));
+        afterRotate.setValue(1,2, cells.getValue(0, 1));
+        afterRotate.setValue(1,1, cells.getValue(1,  1));
+        afterRotate.setValue(1,0, cells.getValue(2, 1));
 
-        afterRotate.setValue(0,0, cells.getValue(0, 2));
-        afterRotate.setValue(0,1, cells.getValue(1, 2));
-        afterRotate.setValue(0,2, cells.getValue(2, 2 ));
+        afterRotate.setValue(2,2, cells.getValue(0, 2));
+        afterRotate.setValue(2,1, cells.getValue(1, 2));
+        afterRotate.setValue(2,0, cells.getValue(2,  2));
 
         return afterRotate;
     }
