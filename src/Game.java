@@ -1,7 +1,7 @@
 public class Game {
-    private Field field;
-    private FieldView fieldView;
-    private Player[] players;
+    private final Field field;
+    private final FieldView fieldView;
+    private final Player[] players;
     private int currentPlayer;
     private boolean isGameOver;
     private int currentMove;

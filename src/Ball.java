@@ -1,5 +1,5 @@
 public class Ball {
-    private BallColor color;
+    private final BallColor color;
 
     public Ball(BallColor color) {
         this.color = color;

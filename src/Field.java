@@ -14,12 +14,12 @@ public class Field {
         Matrix<Cell> cellMatrix = mergeChildFields();
         for (int x = 0; x < 6; x++) {
             for (int y = 0; y < 6; y++) {
-                if (cellMatrix.getValue(x, y).getState() == CellState.NotEmpty) {
+                if (cellMatrix.getValue(x, y).getState() == CellState.Empty) {
                     return false;
                 }
             }
         }
-        return false;
+        return true;
     }
 
     public void rotateField(int x, int y, RotateDirection rotateDirection) throws Exception {
